@@ -106,6 +106,8 @@
               :item-content-class="context.item.class"
               :show-popover="currentDraggingEgg == null"
               :active="currentDraggingEgg == context.item"
+              :invalid="currentDraggingPotion !== null
+               && !isHatchable(currentDraggingPotion, context.item)"
               :highlight-border="isHatchable(currentDraggingPotion, context.item)"
               @itemDragOver="onDragOver($event, context.item)"
               @itemDropped="onDrop($event, context.item)"
@@ -157,6 +159,8 @@
               :item-content-class="context.item.class"
               :show-popover="currentDraggingPotion == null"
               :active="currentDraggingPotion == context.item"
+              :invalid="currentDraggingEgg !== null
+               && !isHatchable(context.item, currentDraggingEgg)"
               :highlight-border="isHatchable(context.item, currentDraggingEgg)"
               @itemDragEnd="onDragEnd($event, context.item)"
               @itemDragStart="onDragStart($event, context.item)"

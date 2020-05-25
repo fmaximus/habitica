@@ -16,7 +16,7 @@
     >
       <div
         class="item"
-        :class="{'item-active': active, 'highlight-border':highlightBorder }"
+        :class="{'item-active': active, 'highlight-border':highlightBorder, 'invalid':invalid }"
       >
         <slot
           name="itemBadge"
@@ -75,6 +75,10 @@ export default {
     },
     highlightBorder: {
       type: Boolean,
+    },
+    invalid: {
+      type: Boolean,
+      default: false,
     },
   },
   data () {

@@ -73,6 +73,10 @@
   &.highlight-border {
     border-color: $purple-500;
   }
+
+  &.invalid:hover {
+    cursor: no-drop;
+  }
 }
 
 .flat .item {
